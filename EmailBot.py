@@ -1,7 +1,7 @@
 import getpass
 import smtplib
 import pandas as pd
-
+import time
 
 #intialize server for sending email messages
 def serverSetup():
@@ -22,22 +22,35 @@ def sendMail(server,senderAddress, recipientAddress, subject, body):
 def setBody(row):
     # recipientName = "".join([row["fname"], row["lname"]], delimiter="/s")
     server = serverSetup()
-    recipientName = row["fname"] +" "+ row["lname"]
-    companyName = row["company"]
-    recipientAddress = row["email"]
+    recipientName = str(row["fname"]) +" "+ str(row["lname"])
+    companyName = str(row["company"])
+    recipientAddress = str(row["email"])
 
-    subject = "California State University Sacramento - Computer Science Volunteer Request"
+    subject = "California State University, Sacramento - Computer Science Senior Project Proposal/Volunteer Request"
 
-    text = '''Greetings ''' + recipientName + ''', \n\n\t My name is Joshua Poe. I'm a current senior in the Computer Science department at California State University, Sacramento. I represent a group of eight seniors currently seeking the opportunity to volunteer our time, knowledge, and experience over the course of the next two semesters. One of the requirements of our department for graduation is an end of year project / Senior Project that is intended to provide computer science majors with experience in the development of a software application. We would love the opportunity to do some software development work for you and your company completely gratis. I'd greatly enjoy the opportunity to meet and discuss in more detail the possibility of volunteering our abilites to ''' + companyName + ''' Im sure you have a project, or two, in the back of your mind that you haven't had the time to prototype yourself; 
+    text = '''Greetings ''' +  recipientName + ''' , 
 
-Let us develope it for you. 
-    
-We would be available to begin work on a project immediately with the final product being delevered by december of 2021.
-    
-Best,
+My name is Joshua Poe. I am a current senior in the Computer Science department at California State University, Sacramento. I represent a group of eight seniors currently seeking the opportunity to volunteer our time, knowledge, and experience over the course of the next two semesters.
+
+Our team consists of students who work in the industry and have experience in numerous current technologies such as data analytics, cybersecurity, machine learning, embedded systems, cloud solutions, web development, and more.
+
+We would love the opportunity to bring your passion project to life. We are looking to fill a need ''' + companyName + ''' has been missing,  completely gratis. We are available this semester to begin creating a high-fidelity prototype with the final product being delivered by December of 2021.
+
+We would be more than excited to meet with you or your team to discuss in more detail the opportunities of volunteering our time and unique abilities.
+Please respond to this email at your earliest convenience.
+
+Best Regards,
 Joshua Poe
-'''
+
+Cell - 916-261-5200
+Email - jpoe@csus.edu
+Linked In - https://www.linkedin.com/in/joshua-poe/
+GitHub - https://github.com/icarus44-zer0
+    '''
+    
     sendMail(server,"jpoe@csus.edu",recipientAddress,subject,text)
+    print(companyName)
+    time.sleep(20)
     return
 
 def main():
