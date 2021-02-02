@@ -1,2 +1,2 @@
-Josh Poe1 jpoe@csus.edu Sac State
-
+Josh,Poe1,jpoe@csus.edu,Sac State
+yet,paul,jpoe@csus.edu,Slack State
