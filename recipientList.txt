@@ -1,2 +1,2 @@
-Josh,Poe1,jpoe@csus.edu,Sac State
-yet,paul,jpoe@csus.edu,Slack State
+Josh,Poe,jpoe@csus.edu,Sac State
+Manh,Sy,manhsy@csus.edu,EMAILBOT.COM

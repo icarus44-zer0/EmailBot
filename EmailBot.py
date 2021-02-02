@@ -40,10 +40,11 @@ Joshua Poe
     sendMail(server,"jpoe@csus.edu",recipientAddress,subject,text)
     return
 
-names = ["fname","lname","email", "company"]
-df = pd.read_csv('recipientList.txt', delimiter=",", names=names)
+def main():
+    names = ["fname","lname","email", "company"]
+    df = pd.read_csv('recipientList.txt', delimiter=",", names=names)
+    df.apply(setBody,axis=1)
+    return
 
-#iterate to generate the DF 
-df.apply(setBody,axis=1)
-
-# iterate over the DF to send the emails
+if __name__ == "__main__":
+    main()
