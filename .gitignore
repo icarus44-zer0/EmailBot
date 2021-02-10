@@ -140,3 +140,7 @@ cython_debug/
 
 # user defined files 
 creds.txt
+EMAIL LIST - Emails Scrubbed .csv
+Email_List.txt
+namelist.csv
+recipientList.txt
